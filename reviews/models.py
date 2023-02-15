@@ -19,9 +19,9 @@ class Review(models.Model):
     product_title = models.CharField(max_length=500)
     description = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_upload_ysg4yv')
+        upload_to='images/', default='../default_upload_ysg4yv',blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.IntegerField(choices=RATING_CHOICES, default=0)
+    rating = models.IntegerField(choices=RATING_CHOICES, default=0, blank=False)
     created_at = models.DateTimeField(auto_now=True)
     modified_on = models.DateTimeField(auto_now=True)
 

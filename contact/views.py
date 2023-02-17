@@ -7,9 +7,9 @@ from .serializers import ContactSerializer
 
 class ContactList(generics.ListCreateAPIView):
     '''
-    Shows the contact requests sent but the owner of the form
+    Shows the contact requests sent by the owner of the form
     '''
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
 
     def get_queryset(self, *args, **kwargs):

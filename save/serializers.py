@@ -1,22 +1,17 @@
 from rest_framework import serializers
-from .models import Like
+from .models import Save
 from django.db import IntegrityError
 
 
-class LikeSerializer(serializers.ModelSerializer):
+class SaveSerializer(serializers.ModelSerializer):
     '''
-    Serializer for like Model
+    Serializer for Save Model
     '''
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
-        model = Like
-        fields = [
-            'id',
-            'created_at',
-            'owner',
-            'review',
-        ]
+        model = Save
+        fields = '__all__'
 
 # to handle duplicates, credit CI walkthrough
     def create(self, validated_data):
@@ -24,5 +19,5 @@ class LikeSerializer(serializers.ModelSerializer):
             return super().create(validated_data)
         except IntegrityError:
             raise serializers.ValidationError({
-                'detail: You Already liked this review'
+                'detail: You Already saved this review'
             })

@@ -2,7 +2,7 @@ from rest_framework import generics, permissions
 from reviewme_api.permissions import IsOwnerOrReadOnly
 from .models import Comment
 from .serializers import CommentSerializer, CommentDetailSerializer
-
+from django_filters.rest_framework import DjangoFilterBackend
 
 class CommentList(generics.ListCreateAPIView):
     ''' To list and create comments using generics'''
@@ -10,6 +10,8 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['review']
 
     def perform_create(self, serializer):
         '''

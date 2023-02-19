@@ -23,7 +23,7 @@ class Review(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.IntegerField(choices=RATING_CHOICES, default=0, blank=False)
     created_at = models.DateTimeField(auto_now=True)
-    modified_on = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         '''

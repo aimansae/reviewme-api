@@ -23,7 +23,7 @@ class ReviewList(generics.ListCreateAPIView):
         filters.SearchFilter,
         DjangoFilterBackend,
     ]
-    
+
     filterset_fields = [
         'likes__owner__profile',
         'owner__profile',

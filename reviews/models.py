@@ -8,20 +8,21 @@ class Review(models.Model):
     Shows all the reviews posted, with related image and rating
     '''
     RATING_CHOICES = [
-        ('0', '0'),
-        ('1', '1'),
-        ('2', '2'),
-        ('3', '3'),
-        ('4', '4'),
-        ('5', '5'),
+        (0, '0'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
     ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     product_title = models.CharField(max_length=500)
     description = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_upload_ysg4yv',blank=False)
+        upload_to='images/', default='../default_upload_ysg4yv', blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.IntegerField(choices=RATING_CHOICES, default=0, blank=False)
+    rating = models.IntegerField(
+        choices=RATING_CHOICES, default=0, blank=False)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
 

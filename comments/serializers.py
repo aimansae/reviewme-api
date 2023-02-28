@@ -36,7 +36,7 @@ class CommentSerializer(serializers.ModelSerializer):
             'review',
             'created_at',
             'updated_at',
-            'comment_text',
+            'content',
         ]
 
 

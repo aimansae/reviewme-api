@@ -15,10 +15,10 @@ class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
-    comment_text = models.TextField()
+    content = models.TextField()
 
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
-        return self.comment_text
+        return self.content

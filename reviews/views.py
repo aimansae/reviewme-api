@@ -9,7 +9,7 @@ from django.db.models import Count
 class ReviewList(generics.ListCreateAPIView):
 
     '''
-    Lists all the revies and enables to create them if user is logged in
+    Lists all the reviews and enables to create them if user is logged in
     '''
     serializer_class = ReviewSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -23,9 +23,10 @@ class ReviewList(generics.ListCreateAPIView):
         filters.SearchFilter,
         DjangoFilterBackend,
     ]
-
+# to check saved owner
     filterset_fields = [
         'likes__owner__profile',
+        'saved__owner__profile',
         'owner__profile',
     ]
     search_fields = [

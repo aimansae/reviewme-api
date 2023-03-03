@@ -1,182 +1,100 @@
-System check identified no issues (0 silenced).
-February 25, 2023 - 14:14:20
-Django version 3.2.4, using settings 'reviewme_api.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-[25/Feb/2023 14:14:25] "GET / HTTP/1.1" 200 10275
-[25/Feb/2023 14:14:35] "GET /reviews/ HTTP/1.1" 200 18605
-Internal Server Error: /reviews/
-Traceback (most recent call last):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/generics.py", line 242, in post
-    return self.create(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
-    serializer.is_valid(raise_exception=True)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 476, in to_internal_value
-    validated_value = field.run_validation(primitive_value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 569, in run_validation
-    self.run_validators(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 593, in run_validators
-    validator(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 358, in __call__
-    if self.compare(cleaned, limit_value):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 392, in compare
-    return a < b
-TypeError: '<' not supported between instances of 'str' and 'int'
-[25/Feb/2023 14:14:39] "POST /reviews/ HTTP/1.1" 500 145446
-/workspace/reviewme-api/reviews/serializers.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 25, 2023 - 14:18:37
-Django version 3.2.4, using settings 'reviewme_api.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-Value:  <class 'django.core.files.uploadedfile.InMemoryUploadedFile'> Screenshot 2023-02-23 22.20.17.png
-Internal Server Error: /reviews/
-Traceback (most recent call last):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/generics.py", line 242, in post
-    return self.create(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
-    serializer.is_valid(raise_exception=True)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 476, in to_internal_value
-    validated_value = field.run_validation(primitive_value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 569, in run_validation
-    self.run_validators(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 593, in run_validators
-    validator(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 358, in __call__
-    if self.compare(cleaned, limit_value):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 392, in compare
-    return a < b
-TypeError: '<' not supported between instances of 'str' and 'int'
-[25/Feb/2023 14:19:21] "POST /reviews/ HTTP/1.1" 500 146346
-Value:  <class 'django.core.files.uploadedfile.InMemoryUploadedFile'> Screenshot 2023-02-23 22.20.17.png
-Internal Server Error: /reviews/
-Traceback (most recent call last):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/generics.py", line 242, in post
-    return self.create(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
-    serializer.is_valid(raise_exception=True)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 476, in to_internal_value
-    validated_value = field.run_validation(primitive_value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 569, in run_validation
-    self.run_validators(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 593, in run_validators
-    validator(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 358, in __call__
-    if self.compare(cleaned, limit_value):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 392, in compare
-    return a < b
-TypeError: '<' not supported between instances of 'str' and 'int'
-[25/Feb/2023 14:20:43] "POST /reviews/ HTTP/1.1" 500 146346
-/workspace/reviewme-api/reviews/serializers.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 25, 2023 - 14:20:58
-Django version 3.2.4, using settings 'reviewme_api.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-[25/Feb/2023 14:21:04] "GET / HTTP/1.1" 200 10275
-[25/Feb/2023 14:21:14] "GET /reviews/ HTTP/1.1" 200 18605
-Value:  <class 'int'> 95640
-Internal Server Error: /reviews/
-Traceback (most recent call last):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/generics.py", line 242, in post
-    return self.create(request, *args, **kwargs)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/mixins.py", line 18, in create
-    serializer.is_valid(raise_exception=True)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/serializers.py", line 476, in to_internal_value
-    validated_value = field.run_validation(primitive_value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 569, in run_validation
-    self.run_validators(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/rest_framework/fields.py", line 593, in run_validators
-    validator(value)
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 358, in __call__
-    if self.compare(cleaned, limit_value):
-  File "/workspace/.pip-modules/lib/python3.8/site-packages/django/core/validators.py", line 392, in compare
-    return a < b
-TypeError: '<' not supported between instances of 'str' and 'int'
-[25/Feb/2023 14:21:21] "POST /reviews/ HTTP/1.1" 500 146434
+2023-03-02T16:58:30.264370+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=3bc18698-a48b-421c-a24f-ba30affa8d67 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=513 protocol=https
+2023-03-02T16:58:30.394558+00:00 app[web.1]: 10.1.39.135 - - [02/Mar/2023:16:58:30 +0000] "GET /reviews/?search= HTTP/1.1" 200 4662 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T16:58:30.394663+00:00 heroku[router]: at=info method=GET path="/reviews/?search=" host=drf-reviewme.herokuapp.com request_id=7d70dc14-7a34-44ba-8d61-29b64c36325a fwd="78.19.148.229" dyno=web.1 connect=0ms service=94ms status=200 bytes=5073 protocol=https
+2023-03-02T17:00:15.350038+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=9de5a929-6a73-40dc-8c96-c6817b77bd1b fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:00:15.353324+00:00 app[web.1]: 10.1.29.160 - - [02/Mar/2023:17:00:15 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:00:15.358224+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=dc4d7a76-7562-42d8-a205-f35ecaa75e97 fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:00:15.358658+00:00 app[web.1]: 10.1.2.225 - - [02/Mar/2023:17:00:15 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:00:15.414444+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=7baeac60-9ed2-4f8e-98e0-57c0dc174507 fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:00:15.414976+00:00 app[web.1]: 10.1.2.225 - - [02/Mar/2023:17:00:15 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:00:15.415531+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=db78f735-c0b9-4d0f-8d0b-516798bfbeb6 fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:00:15.418664+00:00 app[web.1]: 10.1.29.160 - - [02/Mar/2023:17:00:15 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:00:15.503758+00:00 heroku[router]: at=info method=GET path="/comments/?review=18" host=drf-reviewme.herokuapp.com request_id=347d8c06-da0e-4314-a857-61d44b5351fd fwd="84.107.122.50" dyno=web.1 connect=0ms service=41ms status=200 bytes=461 protocol=https
+2023-03-02T17:00:15.507019+00:00 app[web.1]: 10.1.29.160 - - [02/Mar/2023:17:00:15 +0000] "GET /comments/?review=18 HTTP/1.1" 200 52 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:00:15.510809+00:00 heroku[router]: at=info method=GET path="/reviews/18/" host=drf-reviewme.herokuapp.com request_id=244aea92-9582-429b-8a30-25a04ca4f13e fwd="84.107.122.50" dyno=web.1 connect=0ms service=40ms status=200 bytes=895 protocol=https
+2023-03-02T17:00:15.511033+00:00 app[web.1]: 10.1.2.225 - - [02/Mar/2023:17:00:15 +0000] "GET /reviews/18/ HTTP/1.1" 200 471 "-" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:58.420233+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:58 +0000] "GET /dj-rest-auth/user/ HTTP/1.1" 401 58 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:58.425527+00:00 heroku[router]: at=info method=GET path="/dj-rest-auth/user/" host=drf-reviewme.herokuapp.com request_id=16e41051-a83f-4105-b383-afe3ed1ae2ca fwd="78.19.148.229" dyno=web.1 connect=8ms service=6ms status=401 bytes=521 protocol=https
+2023-03-02T17:02:58.442912+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:58 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 401 67 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:58.444612+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=e19d79bd-edb3-49ff-b515-5543a1265f48 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=513 protocol=https
+2023-03-02T17:02:58.463287+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:58 +0000] "GET /dj-rest-auth/user/ HTTP/1.1" 401 58 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:58.465130+00:00 heroku[router]: at=info method=GET path="/dj-rest-auth/user/" host=drf-reviewme.herokuapp.com request_id=76bb4b16-bf98-40e4-8edc-ba0bf8216d7b fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=521 protocol=https
+2023-03-02T17:02:58.482263+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:58 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 401 67 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:58.483963+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=97b80901-4da0-40de-8d4b-c19488b6268c fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=513 protocol=https
+2023-03-02T17:02:58.501126+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:58 +0000] "GET /dj-rest-auth/user/ HTTP/1.1" 401 58 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:58.503115+00:00 heroku[router]: at=info method=GET path="/dj-rest-auth/user/" host=drf-reviewme.herokuapp.com request_id=6b846899-8124-429f-9bd8-d5ba37d039f6 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=521 protocol=https
+2023-03-02T17:02:59.702084+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:59 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 401 67 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:59.703812+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=b09275a3-b8d7-4bee-9d79-dd89f5b3e7b7 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=513 protocol=https
+2023-03-02T17:02:59.720437+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:59 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 401 67 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:59.722235+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=f71c9120-3182-47a5-bed5-0df85544ee73 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=401 bytes=513 protocol=https
+2023-03-02T17:02:59.793660+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:02:59 +0000] "GET /reviews/?search= HTTP/1.1" 200 4662 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:02:59.795484+00:00 heroku[router]: at=info method=GET path="/reviews/?search=" host=drf-reviewme.herokuapp.com request_id=c2cbe066-2e1c-4baa-b1ab-650923dbd72b fwd="78.19.148.229" dyno=web.1 connect=0ms service=56ms status=200 bytes=5073 protocol=https
+2023-03-02T17:03:14.217980+00:00 heroku[router]: at=info method=OPTIONS path="/dj-rest-auth/login/" host=drf-reviewme.herokuapp.com request_id=4ffe8774-1e8f-479a-b397-33fdda59716d fwd="78.19.148.229" dyno=web.1 connect=0ms service=1ms status=200 bytes=538 protocol=https
+2023-03-02T17:03:14.218047+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:03:14 +0000] "OPTIONS /dj-rest-auth/login/ HTTP/1.1" 200 0 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:14.446114+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:03:14 +0000] "POST /dj-rest-auth/login/ HTTP/1.1" 200 650 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:14.447822+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/login/" host=drf-reviewme.herokuapp.com request_id=b19b21f4-18f1-423b-ab16-5ee807c9d7dc fwd="78.19.148.229" dyno=web.1 connect=0ms service=211ms status=200 bytes=2025 protocol=https
+2023-03-02T17:03:15.482944+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:03:15 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:15.484734+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=83d8ba4a-31c2-4ba3-be8a-245d0c71ecd4 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:03:15.504663+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:03:15 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:15.506328+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=885415a0-0e0b-4c0b-9954-259b7bca48d0 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:03:15.592760+00:00 app[web.1]: 10.1.1.179 - - [02/Mar/2023:17:03:15 +0000] "GET /reviews/?search= HTTP/1.1" 200 4650 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:15.594458+00:00 heroku[router]: at=info method=GET path="/reviews/?search=" host=drf-reviewme.herokuapp.com request_id=15a1cdd2-ed04-4fed-b46e-b8164c63299b fwd="78.19.148.229" dyno=web.1 connect=0ms service=70ms status=200 bytes=5061 protocol=https
+2023-03-02T17:03:24.317861+00:00 app[web.1]: 10.1.8.60 - - [02/Mar/2023:17:03:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.319753+00:00 app[web.1]: 10.1.10.161 - - [02/Mar/2023:17:03:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.319767+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=f55ccd64-dd29-43f4-8df4-396bc157ddc4 fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:03:24.325234+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=ebe06cfb-5d80-422f-8f0f-4ec322f95128 fwd="84.107.122.50" dyno=web.1 connect=0ms service=3ms status=200 bytes=997 protocol=https
+2023-03-02T17:03:24.332969+00:00 heroku[router]: at=info method=GET path="/dj-rest-auth/user/" host=drf-reviewme.herokuapp.com request_id=64802cdb-d82f-43e1-8845-22fa008dddee fwd="84.107.122.50" dyno=web.1 connect=0ms service=24ms status=200 bytes=608 protocol=https
+2023-03-02T17:03:24.333817+00:00 app[web.1]: 10.1.37.87 - - [02/Mar/2023:17:03:24 +0000] "GET /dj-rest-auth/user/ HTTP/1.1" 200 192 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.368595+00:00 app[web.1]: 10.1.8.60 - - [02/Mar/2023:17:03:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.369241+00:00 app[web.1]: 10.1.10.161 - - [02/Mar/2023:17:03:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.370406+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=0f32c155-4e10-4949-a0d5-52d1e77660a5 fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:03:24.374856+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=6b27c7d1-a251-4ba9-8d54-2d7ac7c29df4 fwd="84.107.122.50" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:03:24.458479+00:00 app[web.1]: 10.1.10.161 - - [02/Mar/2023:17:03:24 +0000] "GET /comments/?review=18 HTTP/1.1" 200 52 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.463920+00:00 heroku[router]: at=info method=GET path="/comments/?review=18" host=drf-reviewme.herokuapp.com request_id=e2b56308-3e1b-4559-ad34-df8693bbc4ff fwd="84.107.122.50" dyno=web.1 connect=0ms service=29ms status=200 bytes=461 protocol=https
+2023-03-02T17:03:24.468686+00:00 app[web.1]: 10.1.8.60 - - [02/Mar/2023:17:03:24 +0000] "GET /reviews/18/ HTTP/1.1" 200 471 "-" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:24.470423+00:00 heroku[router]: at=info method=GET path="/reviews/18/" host=drf-reviewme.herokuapp.com request_id=2e6831b6-47cb-4843-84c8-4dd597af319c fwd="84.107.122.50" dyno=web.1 connect=0ms service=35ms status=200 bytes=895 protocol=https
+2023-03-02T17:03:29.447319+00:00 app[web.1]: 10.1.8.60 - - [02/Mar/2023:17:03:29 +0000] "POST /comments/ HTTP/1.1" 400 38 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:03:29.449283+00:00 heroku[router]: at=info method=POST path="/comments/" host=drf-reviewme.herokuapp.com request_id=ae8c9a90-ce7e-40fc-9795-244d72f6dc90 fwd="84.107.122.50" dyno=web.1 connect=0ms service=21ms status=400 bytes=456 protocol=https
+2023-03-02T17:06:06.849853+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:06 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.849951+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=de1072a2-6726-452c-a251-349e273abe84 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:06.851521+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=c859760a-6920-4ad6-b5b6-b97ef7addd12 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:06.852103+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:06 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.870527+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=c46578dd-6daf-47a1-bf57-10cfad403fed fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:06.871116+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:06 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.872697+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:06 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.872771+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=8d4a9a3e-1490-48aa-bf0d-08ce53148799 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:06.891456+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:06 +0000] "GET /reviews/1 HTTP/1.1" 301 0 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.895035+00:00 heroku[router]: at=info method=GET path="/reviews/1" host=drf-reviewme.herokuapp.com request_id=dfe955d2-e7a6-4b48-8702-dc15521a9390 fwd="78.19.148.229" dyno=web.1 connect=0ms service=1ms status=301 bytes=398 protocol=https
+2023-03-02T17:06:06.920748+00:00 heroku[router]: at=info method=GET path="/comments/?review=1" host=drf-reviewme.herokuapp.com request_id=8dd1d67d-3e25-4327-91fc-71bbda48a262 fwd="78.19.148.229" dyno=web.1 connect=0ms service=31ms status=200 bytes=461 protocol=https
+2023-03-02T17:06:06.921431+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:06 +0000] "GET /comments/?review=1 HTTP/1.1" 200 52 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.937947+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:06 +0000] "GET /reviews/1/ HTTP/1.1" 200 459 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:06.938146+00:00 heroku[router]: at=info method=GET path="/reviews/1/" host=drf-reviewme.herokuapp.com request_id=e6daaae5-ee8a-418c-a775-8087afe3cc78 fwd="78.19.148.229" dyno=web.1 connect=0ms service=29ms status=200 bytes=883 protocol=https
+2023-03-02T17:06:24.034221+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=57ed7daa-0415-4e91-a059-3c31013ef64a fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:24.034795+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.052276+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:24 +0000] "GET /dj-rest-auth/user/ HTTP/1.1" 200 192 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.055129+00:00 heroku[router]: at=info method=GET path="/dj-rest-auth/user/" host=drf-reviewme.herokuapp.com request_id=34b24f98-d6de-45de-8274-6ad4cad024a0 fwd="78.19.148.229" dyno=web.1 connect=0ms service=28ms status=200 bytes=608 protocol=https
+2023-03-02T17:06:24.064099+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=c1026cbb-82a4-4fdc-89c5-11abb21a7839 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:24.064667+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.131848+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=b13e6c5f-0c8d-43e6-9b82-a0ce5cf6ca0e fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:24.132508+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.134970+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:24 +0000] "POST /dj-rest-auth/token/refresh/ HTTP/1.1" 200 274 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.135206+00:00 heroku[router]: at=info method=POST path="/dj-rest-auth/token/refresh/" host=drf-reviewme.herokuapp.com request_id=c89c4c04-4f2a-44f9-91cc-50970874b56c fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=200 bytes=997 protocol=https
+2023-03-02T17:06:24.197490+00:00 heroku[router]: at=info method=GET path="/reviews/1" host=drf-reviewme.herokuapp.com request_id=5de31ad0-3801-4db4-a929-70423ae5b5d5 fwd="78.19.148.229" dyno=web.1 connect=0ms service=1ms status=301 bytes=398 protocol=https
+2023-03-02T17:06:24.198099+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:24 +0000] "GET /reviews/1 HTTP/1.1" 301 0 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.220924+00:00 app[web.1]: 10.1.19.48 - - [02/Mar/2023:17:06:24 +0000] "GET /comments/?review=1 HTTP/1.1" 200 52 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:24.221018+00:00 heroku[router]: at=info method=GET path="/comments/?review=1" host=drf-reviewme.herokuapp.com request_id=1efa2c22-a917-4c85-b9ce-2dfe5f5694bd fwd="78.19.148.229" dyno=web.1 connect=0ms service=24ms status=200 bytes=461 protocol=https
+2023-03-02T17:06:24.256779+00:00 heroku[router]: at=info method=GET path="/reviews/1/" host=drf-reviewme.herokuapp.com request_id=c2f6ceef-2daa-4b71-a42a-18c7507f8127 fwd="78.19.148.229" dyno=web.1 connect=0ms service=28ms status=200 bytes=883 protocol=https
+2023-03-02T17:06:24.257328+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:24 +0000] "GET /reviews/1/ HTTP/1.1" 200 459 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:34.118842+00:00 app[web.1]: 10.1.39.135 - - [02/Mar/2023:17:06:34 +0000] "OPTIONS /comments/ HTTP/1.1" 200 0 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:06:34.118967+00:00 heroku[router]: at=info method=OPTIONS path="/comments/" host=drf-reviewme.herokuapp.com request_id=9bf96552-c5ce-4987-938f-e03fcf90e8f8 fwd="78.19.148.229" dyno=web.1 connect=0ms service=1ms status=200 bytes=538 protocol=https
+2023-03-02T17:06:34.158517+00:00 heroku[router]: at=info method=POST path="/comments/" host=drf-reviewme.herokuapp.com request_id=a3a0f7f4-0d0c-4e17-868f-ea0aef8160b5 fwd="78.19.148.229" dyno=web.1 connect=0ms service=21ms status=400 bytes=456 protocol=https
+2023-03-02T17:06:34.159108+00:00 app[web.1]: 10.1.45.81 - - [02/Mar/2023:17:06:34 +0000] "POST /comments/ HTTP/1.1" 400 38 "https://3000-aimansae-reviewme-g1s8b5wn1tu.ws-eu89.gitpod.io/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:09:43.079549+00:00 app[web.1]: 10.1.10.54 - - [02/Mar/2023:17:09:43 +0000] "GET / HTTP/1.1" 200 37 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:09:43.081171+00:00 heroku[router]: at=info method=GET path="/" host=drf-reviewme.herokuapp.com request_id=e5684897-e30b-4ba5-9918-75aae6486304 fwd="78.19.148.229" dyno=web.1 connect=0ms service=21ms status=200 bytes=303 protocol=https
+2023-03-02T17:09:43.204888+00:00 app[web.1]: 10.1.10.54 - - [02/Mar/2023:17:09:43 +0000] "GET /favicon.ico HTTP/1.1" 404 179 "https://drf-reviewme.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:09:43.206546+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=drf-reviewme.herokuapp.com request_id=99f7ff8c-4f77-4ccc-bf62-b65e8f8ec828 fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=404 bytes=425 protocol=https
+2023-03-02T17:09:49.915091+00:00 app[web.1]: 10.1.10.54 - - [02/Mar/2023:17:09:49 +0000] "GET /comments HTTP/1.1" 301 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:09:49.915943+00:00 heroku[router]: at=info method=GET path="/comments" host=drf-reviewme.herokuapp.com request_id=2586b4ca-9bd6-4fb8-ab9d-69658a8a4beb fwd="78.19.148.229" dyno=web.1 connect=0ms service=2ms status=301 bytes=266 protocol=https
+2023-03-02T17:09:49.958500+00:00 app[web.1]: 10.1.10.54 - - [02/Mar/2023:17:09:49 +0000] "GET /comments/ HTTP/1.1" 200 318 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+2023-03-02T17:09:49.960090+00:00 heroku[router]: at=info method=GET path="/comments/" host=drf-reviewme.herokuapp.com request_id=3d2d833d-8d12-4c85-8fc4-dc9901ee9808 fwd="78.19.148.229" dyno=web.1 connect=0ms service=27ms status=200 bytes=597 protocol=https
+  

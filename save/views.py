@@ -10,11 +10,11 @@ class SaveList(generics.ListCreateAPIView):
     '''
 
     serializer_class = SaveSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Save.objects.all()
 
-    def get_queryset(self, *args, **kwargs):
-        return Save.objects.all().filter(owner=self.request.user)
+    # def get_queryset(self, *args, **kwargs):
+    #     return Save.objects.all().filter(owner=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -24,7 +24,7 @@ class SaveDetail(generics.RetrieveDestroyAPIView):
     '''
     Enables the owner to retreve or delete a saved product
     '''
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsOwnerOrReadOnly]
     serializer_class = SaveSerializer
     queryset = Save.objects.all()
     

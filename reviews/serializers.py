@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Review
 from likes.models import Like
+from save.models import Save
 
 
 class ReviewSerializer(serializers.ModelSerializer):

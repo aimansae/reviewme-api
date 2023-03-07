@@ -15,6 +15,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     likes_count = serializers.ReadOnlyField()
     comment_count = serializers.ReadOnlyField()
     likes_created_at = serializers.ReadOnlyField()
+    save_id = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
         request = self.context['request']
@@ -27,6 +28,15 @@ class ReviewSerializer(serializers.ModelSerializer):
                 owner=user, review=obj
             ).first()
             return like.id if like else None
+        return None
+    
+    def get_save_id(self, obj):
+        user = self.context['request'].users
+        if user.is_authenticated:
+            save = Save.objects.filter(
+                owner=user, review=obj
+            ).first()
+            return save.id if save else None
         return None
     # image validation code from C.I walkthrough
     # and Django rest field validation docs
@@ -67,4 +77,5 @@ class ReviewSerializer(serializers.ModelSerializer):
             'likes_count',
             'comment_count',
             'likes_created_at',
+            'save_id'
         ]  # or '__all_'

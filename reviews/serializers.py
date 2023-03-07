@@ -31,7 +31,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         return None
     
     def get_save_id(self, obj):
-        user = self.context['request'].users
+        user = self.context['request'].user
         if user.is_authenticated:
             save = Save.objects.filter(
                 owner=user, review=obj

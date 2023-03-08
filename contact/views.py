@@ -11,6 +11,8 @@ class ContactList(generics.ListCreateAPIView):
     '''
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
+ # added later
+    queryset = Contact.objects.all()
 
     def get_queryset(self, *args, **kwargs):
         return Contact.objects.all().filter(owner=self.request.user)

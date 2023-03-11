@@ -52,4 +52,4 @@ class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.annotate(
         likes_count=Count('likes', distinct=True),
         comment_count=Count('comment', distinct=True)
-    ).order_by('created_at')
+    ).order_by('-created_at')

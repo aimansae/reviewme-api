@@ -1,108 +1,192 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ReviewMe API
 
-Welcome aimansae,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Review Me is a website where users can review any kind of beauty product and share their experience and valuable feedback with the rest of the platform. Users are able to review the product bit describing their opinion, inserting the paid price and the relative picture.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This repository holds Django Rest Framework (DRF) API tp support Reactjs frontend project.
 
-## Gitpod Reminders
+## Live Site
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Deployed Backend API link
+Deployed Frontend live link
 
-`python3 -m http.server`
+## Github Repository"
 
-A blue button should appear to click: _Make Public_,
+Backend Repository
+Frontend Repository
 
-Another blue button should appear to click: _Open Browser_.
+## Table Of Contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [Introduction](#introduction "Introduction")
+  - [Live-site](#live-site "Live Site")
+  - [Github-repository](#github-repository "Github Repository")
+- [User Stories](#user-stories "User Stories") >LINK TO REACT
+- [Wireframes](#wireframes "Wireframes")
+    - [Database Schema](#database-schema "Database Schema")
 
-A blue button should appear to click: _Make Public_,
+- [Testing](#testing "Testing")
+- [Bugs](#bugs "Bugs")
+  - [Known Bug-Issues](#known-bug-issues "Known Bug-Issues")
+- [Technologies used](#technologies-used "Technologies used")
+  - [Main Language Used](#main-language-used "Main Language Used")
+  - [Frameworks Libraries Used](#frameworks-libraries-used "Frameworks Libraries Used")
+- [Additional Resources](#additional-resources "Additional Resources")
 
-Another blue button should appear to click: _Open Browser_.
+- [Deployment](#deployment "Deployment")
+ - - [Project Setup](#project-setup "Project Setup")
+- [Final Deployment](#final-deployment "Final Deployment")
+- [Credits](#credits "Credits")
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## User Stories
 
-To log into the Heroku toolbelt CLI:
+User stories for backend can be found in a separate internal [file](static/userstories.md)
+A better overview was made by creating Tasks throught Kanban Boiard
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Wireframes
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The database models for the project were created based on the following schema:
 
-------
+- ![ERDDIagram](static/readmeDocs/erd-diagram.png)
 
-## Release History
+## Testing
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+All manual testing can be found [here](static/testing.md)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Bugs
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Known Bug-Issues
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Technologies used
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Main Language Used:
+- Python
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Frameworks Libraries Used
+- [Django](https://www.djangoproject.com/)
+- [Django REST Framework](https://www.django-rest-framework.org/)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+-[Cors Headers](https://www.django-rest-framework.org/topics/ajax-csrf-cors/)
+-[Django Rest Auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
+-[Cloudinary](https://cloudinary.com/) to host images
+-[Heroku](https://www.heroku.com/)
+-[Pillow](https://pillow.readthedocs.io/en/stable/) for image processing
+-[ElephantSQL](https://www.elephantsql.com/) for database
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Deployment
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Project Setup:
+1. The Project is created with Github using [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Here are the steps:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Click on "Use this template"
+- Click on "Create a new repository"
+- Choose a repository Name: 
+- Insert a description (optional)
+Click on "Create repository from template"
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Run the workspace:
+- Click on ‘Gitpod’
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+2. Once the workspace is running, install Django with command:
+-       pip3 install 'django<4' 
 
-------
+3. Start project with command::
+-       django-admin startproject (projectaname) reviewme_api .
+ (*space dot at the end to start in in the current directory*)
 
-## FAQ about the uptime script
+4. Install Django Cloudinary storage:
+-       pip install django-cloudinary-storage
 
-**Why have you added this script?**
+5. Install Pillow:
+-       pip install Pillow (*Uppercase P*)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+6. Add the newly installed apps 'cloudinary_storage' and 'cloudinary' to INSTALLED_APPS in settings.py as shown below:
 
-**How will this affect me?**
+- ![Installedapps](static/readmeDocs/installed-apps.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+7. Setup Environment Variable in top directory:
+  - create file env.py
+  - import os module
+  - import cloudinary environment variable from CLoudinary dashboard as shown below:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+import os
+os.environ["CLOUDINARY_URL"] = "cloudinary://API KEY HERE"
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+8.In settings.py load environment variable with cloudinary credentials and store media
 
-**So….?**
+- ![Cloudinary Media](static/readmeDocs/cloudinary-media.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+### Json Web Token Setup
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+1. Install JSON Web Token with command:
+ -      pip install dj-rest-auth
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+2. Add dj_rest_auth app to INSTALLED_APPS in your django settings.py:
 
-**Anything more?**
+- ![Rest Auth](static/readmeDocs/allauth.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+3. Add the dj-rest-auth urls paths to the main urls.py file as showbelow:
 
----
+- ![Urls.py](static/readmeDocs/auth-urls.png)
 
-Happy coding!
+4. Migrate the database with terminal command:
+-       python manage.py migrate
+
+
+
+5. For users to be able to register, install Django AllAuth with terminal command:
+-       pip install 'dj-rest-auth[with_social]'
+
+6. Add it to your settings.py:
+
+- ![Auth withSocial](static/readmeDocs/auth-withsocial.png)
+
+7. In settings.py Set SITE_ID to 1:
+- SITE_ID = 1
+
+8.In main urls.py add the registration urls below to file:
+
+-     path(
+        'dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')
+    ),
+
+9. Install JSon Tokens with command:
+-      pip install djangoframework-simplejwt
+
+10. In env.py file Set [DEV] to 1:
+
+- ![env dev](static/readmeDocs/env-dev.png)
+
+
+11. This value can be used to check if project is in development or production. Add the following if/else statement to settings.py:
+
+
+- ![Rest Conditional Statement](static/readmeDocs/rest-condition.png)
+
+12. In settings.py to enable token authentication, set REST_USE_JWT to True. To ensure tokens are sent over HTTPS only, set JWT_AUTH_SECURE to True. Cookie names must also be declared. Insert below the aboce code:
+
+
+- ![Use jwt](static/readmeDocs/use-jwt.png)
+
+13. Create serializers.py file in the drf_api directory, and copy UserDetailsSerializer code from Django documentation as follows:
+
+- ![User serialiser](static/readmeDocs/user-serializer.png)
+
+
+14. In settings.py overwrite the default user detail serializer with the following code:
+
+- ![Restauth serialiser](static/readmeDocs/restauth-serializer.png)
+
+15. Migrate the database again with terminal command:
+-        python manage.py migrate
+
+16. Update requirements.txt file with new dependencies by running command 
+-       pip freeze > requirements.txt
+
+17. Add, commit and push all the changes.
+

@@ -13,7 +13,7 @@
 ## Navigation
 
 
-6. As a user **I can view the navigation bar **on every single page so **I can navigate** easily
+6. As a user **I can view the navigation bar** on every single page so **I can navigate** easily
 
 7. As a user **I can scroll infinitely** through the pages, without having to manually click on pages to load more content
 

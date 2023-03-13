@@ -2,19 +2,19 @@
 
 ## Introduction
 
-Review Me is a website where users can review any kind of beauty product and share their experience and valuable feedback with the rest of the platform. Users are able to review the product bit describing their opinion, inserting the paid price and the relative picture.
+Review Me is a website where users can review any kind of beauty product and share their experience and valuable feedback with the rest of the platform. Users are able to review the product by describing their opinion, inserting the paid price and the relative picture.
 
-This repository holds Django Rest Framework (DRF) API tp support Reactjs frontend project.
+This repository holds Django Rest Framework (DRF) API to support Reactjs frontend project.
 
 ## Live Site
 
-Deployed Backend API link
-Deployed Frontend live link
+[Deployed Backend API link](https://drf-reviewme.herokuapp.com/)
+[Deployed Frontend live link]() AGGIUNGI
 
 ## Github Repository"
 
-Backend Repository
-Frontend Repository
+[Backend Repository](https://github.com/aimansae/reviewme-api)
+[Frontend Repository]()  AGGIUNGI
 
 ## Table Of Contents
 
@@ -22,9 +22,9 @@ Frontend Repository
   - [Live-site](#live-site "Live Site")
   - [Github Repository](#github-repository "Github Repository")
 - [User Stories](#user-stories "User Stories") >LINK TO REACT
-- [Wireframes](#wireframes "Wireframes")
 
-  - [Database Schema](#database-schema "Database Schema")
+
+- [Database Schema](#database-schema "Database Schema")
 
 - [Testing](#testing "Testing")
 - [Bugs](#bugs "Bugs")
@@ -45,10 +45,10 @@ Frontend Repository
 
 ## User Stories
 
-User stories for backend can be found in a separate internal [file](static/userstories.md)
+User stories for backend can be found in a separate internal [file](static/readmeDocs/userstories.md)
 A better overview was made by creating Tasks throught Kanban Boiard
 
-## Wireframes
+## Database Schema
 
 The database models for the project were created based on the following schema:
 
@@ -56,11 +56,11 @@ The database models for the project were created based on the following schema:
 
 ## Testing
 
-All manual testing can be found [here](static/testing.md)
+All manual testing can be found [here](static/readmeDocs/testing.md)
 
 ## Bugs
 
-1. When deploying the APP to heroku, the build failed with the folowing error:
+1. When deploying the APP to heroku, the build failed with the following error:
 
 ``` 
 Node version not specified in package.json
@@ -92,7 +92,7 @@ AssertionError at saved/:
 
 ![Assertion Error](static/readmeDocs/assertion-error.png)
 
-Fixed as I had a typo, I inserted field, instead of fields.
+**Fixed** as I had a typo, I inserted field, instead of fields.
 
 3. In comments/ serializers.py, while adding function
 
@@ -102,7 +102,7 @@ return naturaltime(obj.created_at)
 ```
  - Got error : Django AttributeError 'datetime.date' object has no attribute 'utcoffset'
 
-Fixed by modifying model:
+**Fixed** by modifying model:
 
    ```updated_at = models.DateField(auto_now=True)```
 to
@@ -110,11 +110,31 @@ to
 
 and migrating again
 
+4.Upon running review/ views.py and trying to insert a review got error:
 
+- <' not supported between instances of 'str' and 'int'.
+![4 Error](static/readmeDocs/bug-four.png)
 
+**Fixed by**  changig choice field firs values form string to number as sown below:
 
+```
+
+RATING_CHOICES = [
+       (0, '0'),
+       (1, '1'),
+       (2, '2'),
+       (3, '3'),
+       (4, '4'),
+       (5, '5'),
+]
+```
+5. local workspace kept throwing MIME and 404() errors as shown below
+![Mime Error](static/readmeDocs/mime-error.png)
+
+**Fixed** thanks to tutor's help, by adding DEBUG=True to settings.py
 
 ## Known Bug-Issues
+No unknown bugs 
 
 ## Technologies used
 
@@ -124,10 +144,14 @@ and migrating again
 
 ### Frameworks Libraries Used
 
-- [Django](https://www.djangoproject.com/)
+- [Django](https://docs.djangoproject.com/en/3.2/)
 - [Django REST Framework](https://www.django-rest-framework.org/)
-
--[Cors Headers](https://www.django-rest-framework.org/topics/ajax-csrf-cors/) -[Django Rest Auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html) -[Cloudinary](https://cloudinary.com/) to host images -[Heroku](https://www.heroku.com/) -[Pillow](https://pillow.readthedocs.io/en/stable/) for image processing -[ElephantSQL](https://www.elephantsql.com/) for database
+- [Cors Headers](https://www.django-rest-framework.org/topics/ajax-csrf-cors/) 
+- [Django Rest Auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html) 
+- [Cloudinary](https://cloudinary.com/) to host images 
+- [Heroku](https://www.heroku.com/) 
+- [Pillow](https://pillow.readthedocs.io/en/stable/) for image processing 
+- [ElephantSQL](https://www.elephantsql.com/) for database
 
 ### Additional Resources
 - [DrawSQL](https://drawsql.app/) was used to create Database schema
@@ -329,6 +353,7 @@ class CurrentUserSerializer(UserDetailsSerializer):
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer'
 }
+
 ```
 
 15. Migrate the database again with terminal command:
@@ -665,6 +690,7 @@ ALLOWED_HOSTS = [
 57. Add the new ALLOWED_HOST key with the value of your deployed URL (as added to ALLOWED_HOSTS).
 
 58. In settings.py  replace the url string with the ALLOWED_HOST environment variable"
+
 ```
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
@@ -673,10 +699,13 @@ ALLOWED_HOSTS = [
 ```
 
 59.In setting.py import the regular expression module at the top of the file
+
+```
 import re
 ```
 
 60. Replace the if/else statement for CLIENT_ORIGIN with the following:
+
 ```
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
@@ -692,7 +721,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 ## Credits:
 
-- A huge credit goes to Code Institute's DRF walkthrough project, that was used as a main guide to build ReviewMe project.
+- A huge credit goes to Code Institute's Django DRF walkthrough project, that was used as a main guide to build ReviewMe project.
 
 - Code Institute tutors were consulted during set uo issues and a huge thanks to all of them for the explainations and suggestion to solve the issues i faced.
 

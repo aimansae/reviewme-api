@@ -35,7 +35,7 @@ class ReviewList(generics.ListCreateAPIView):
     ordering_fields = [
         'likes_count',
         'comment_count',
-        'likes_created_at',
+        'created_at',
 
     ]
 
@@ -45,7 +45,7 @@ class ReviewList(generics.ListCreateAPIView):
 
 class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     '''
-    Enables to retrieve, edit or delete a revie to the owner
+    Enables to retrieve, edit or delete a review to the owner
     '''
     serializer_class = ReviewSerializer
     permission_classes = [IsOwnerOrReadOnly]

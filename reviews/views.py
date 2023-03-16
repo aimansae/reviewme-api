@@ -23,7 +23,6 @@ class ReviewList(generics.ListCreateAPIView):
         filters.SearchFilter,
         DjangoFilterBackend,
     ]
-# to check saved owner
     filterset_fields = [
         'likes__owner__profile',
         'saved__owner__profile',

@@ -10,7 +10,7 @@ class Contact(models.Model):
     # for phone field validation:
     phone_regex = RegexValidator(
         regex=r'^\+?\d{9,15}$',  # allow + prefix, and between 9 and 15 digits
-        message="Phone number must be entered in the format: '+123456789'. Up to 15 digits allowed."
+        message="Phone number must be entered in the format: '+123456789'.Up to 15 digits allowed."
 
     )
     owner = models.ForeignKey(User, on_delete=models.CASCADE)

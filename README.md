@@ -9,44 +9,42 @@ This repository holds Django Rest Framework (DRF) API to support Reactjs fronten
 ## Live Site
 
 [Deployed Backend API link](https://drf-reviewme.herokuapp.com/)
-[Deployed Frontend live link]() AGGIUNGI
 
-## Github Repository"
+[Deployed Frontend live link](https://reviewme.herokuapp.com/) 
+
+## Github Repository
 
 [Backend Repository](https://github.com/aimansae/reviewme-api)
-[Frontend Repository]()  AGGIUNGI
+
+[Frontend Repository](https://github.com/aimansae/reviewme)
 
 ## Table Of Contents
 
 - [Introduction](#introduction "Introduction")
   - [Live-site](#live-site "Live Site")
   - [Github Repository](#github-repository "Github Repository")
-- [User Stories](#user-stories "User Stories") >LINK TO REACT
-
-
+- [User Stories](#user-stories "User Stories")
 - [Database Schema](#database-schema "Database Schema")
-
 - [Testing](#testing "Testing")
+- [Validation](#validation "Validation")
+
 - [Bugs](#bugs "Bugs")
   - [Known Bug-Issues](#known-bug-issues "Known Bug-Issues")
 - [Technologies used](#technologies-used "Technologies used")
   - [Main Language Used](#main-language-used "Main Language Used")
   - [Frameworks Libraries Used](#frameworks-libraries-used "Frameworks Libraries Used")
 - [Additional Resources](#additional-resources "Additional Resources")
-
 - [Deployment](#deployment "Deployment")
-
   - [Project Setup](#project-setup "Project Setup")
   - [Deploy to Heroku](#deploy-to-heroku "Deploy to Heroku")
     - [Creating the database](#creating-the-database "Creating the database")
     - [Creating Heroku App](#creating-heroku-app "Creating Heroku App")
-
 - [Credits](#credits "Credits")
 
 ## User Stories
 
 User stories for backend can be found in a separate internal [file](static/readmeDocs/userstories.md)
-A better overview was made by creating Tasks throught Kanban Boiard
+A better overview was made by creating Tasks through Github [Issues](https://github.com/aimansae/reviewme/issues) and [Kanban Board](https://github.com/users/aimansae/projects/6) on the frontend side
 
 ## Database Schema
 
@@ -58,35 +56,42 @@ The database models for the project were created based on the following schema:
 
 All manual testing can be found [here](static/readmeDocs/testing.md)
 
+## Validation
+
+Validation was conducted thorught Code Institute [PEP8](https://pep8ci.herokuapp.com/#) tool, it passed with no errors Settings.py and contact model, present some line too long warnings.
+
 ## Bugs
 
 1. When deploying the APP to heroku, the build failed with the following error:
 
-``` 
+```
 Node version not specified in package.json
 ```
 
 - **Fixed** by following [Heroku No Node Version Error](https://help.heroku.com/6235QYN4/why-is-my-node-js-build-failing-because-of-no-matching-node-versions)
 
 Checked node version with command:
--   node --version
 
-In Package.json, underneath version add engines, node versions: 
+- node --version
+
+In Package.json, underneath version add engines, node versions:
+
 ```
 {
   "name": "myapp",
   "description": "a really cool app",
   "version": "1.0.0",
   ADD HERE
-  "engines": {      
+  "engines": {
     "node": "6.11.1"
   }
 }
 
 ```
+
 Add, commit push and deployed successfully!
 
-2. In Saved/ serializers.py got  Error
+2. In Saved/ serializers.py got Error
 
 AssertionError at saved/:
 
@@ -100,22 +105,23 @@ AssertionError at saved/:
 def get_created_at(self, obj):
 return naturaltime(obj.created_at)
 ```
- - Got error : Django AttributeError 'datetime.date' object has no attribute 'utcoffset'
+
+- Got error : Django AttributeError 'datetime.date' object has no attribute 'utcoffset'
 
 **Fixed** by modifying model:
 
-   ```updated_at = models.DateField(auto_now=True)```
+`updated_at = models.DateField(auto_now=True)`
 to
-   ```updated_at = models.DateTimeField(auto_now=True)```
+`updated_at = models.DateTimeField(auto_now=True)`
 
 and migrating again
 
 4.Upon running review/ views.py and trying to insert a review got error:
 
 - <' not supported between instances of 'str' and 'int'.
-![4 Error](static/readmeDocs/bug-four.png)
+  ![4 Error](static/readmeDocs/bug-four.png)
 
-**Fixed by**  changig choice field firs values form string to number as sown below:
+**Fixed by** changig choice field firs values form string to number as sown below:
 
 ```
 
@@ -128,13 +134,15 @@ RATING_CHOICES = [
        (5, '5'),
 ]
 ```
+
 5. local workspace kept throwing MIME and 404() errors as shown below
-![Mime Error](static/readmeDocs/mime-error.png)
+   ![Mime Error](static/readmeDocs/mime-error.png)
 
 **Fixed** thanks to tutor's help, by adding DEBUG=True to settings.py
 
 ## Known Bug-Issues
-No unknown bugs 
+
+No unknown bugs
 
 ## Technologies used
 
@@ -146,14 +154,15 @@ No unknown bugs
 
 - [Django](https://docs.djangoproject.com/en/3.2/)
 - [Django REST Framework](https://www.django-rest-framework.org/)
-- [Cors Headers](https://www.django-rest-framework.org/topics/ajax-csrf-cors/) 
-- [Django Rest Auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html) 
-- [Cloudinary](https://cloudinary.com/) to host images 
-- [Heroku](https://www.heroku.com/) 
-- [Pillow](https://pillow.readthedocs.io/en/stable/) for image processing 
+- [Cors Headers](https://www.django-rest-framework.org/topics/ajax-csrf-cors/)
+- [Django Rest Auth](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
+- [Cloudinary](https://cloudinary.com/) to host images
+- [Heroku](https://www.heroku.com/)
+- [Pillow](https://pillow.readthedocs.io/en/stable/) for image processing
 - [ElephantSQL](https://www.elephantsql.com/) for database
 
 ### Additional Resources
+
 - [DrawSQL](https://drawsql.app/) was used to create Database schema
 
 ## Deployment
@@ -444,6 +453,7 @@ updated_on = serializers.SerializerMethodField()
 [Code Institute Guide](https://code-institute-students.github.io/deployment-docs/41-pp5-adv-fe/pp5-adv-fe-drf-01-create-a-database)
 
 23. Log in to [ElephantSQL.com] (https://www.elephantsql.com/) to access your dashboard
+
 - Click “Create New Instance”
 - Set up your plan:
 - Give your plan a Name (_this is commonly the name of the project_)
@@ -459,6 +469,7 @@ updated_on = serializers.SerializerMethodField()
 ### Creating Heroku App
 
 24. Log into [Heroku](https://www.heroku.com/) and go to the "Dashboard"
+
 - Click “Create new app”
 - Give your app a name and select the region closest to you. When you’re done, click “Create app” to confirm.(_drf-reviewme in my case_)
 - Open the Settings tab, click " Reveal Convfig Vars"
@@ -466,15 +477,13 @@ updated_on = serializers.SerializerMethodField()
 
 25. In **Gitpod workspace**, to connect your external databas type command:
 
--   pip3 install dj_database_url==0.5.0 psycopg2
+- pip3 install dj_database_url==0.5.0 psycopg2
 
 26. In settings.py underneath the import for os import dj_database:
 
--  ```
-    import dj_database_url
-   ```
-
-
+- ```
+   import dj_database_url
+  ```
 
 27. In settings.py update the detabase like so:
 
@@ -490,7 +499,8 @@ os.environ.get('DATABASE_URL')
 }
 
 ```
-28. In env.py  file, add a new environment variable to Gitpod with the key set to DATABASE_URL, and the value to your ElephantSQL database URL
+
+28. In env.py file, add a new environment variable to Gitpod with the key set to DATABASE_URL, and the value to your ElephantSQL database URL
 
 ```
 
@@ -514,17 +524,18 @@ os.environ['DATABASE_URL'] = 'postgres://YOURLINK
 
 Follow the steps to create your superuser username and password
 
-
 30. To confirm that Database is connceted, on the ElephantSQL page on the left s select “BROWSER”
+
 - Click the Table queries button, select auth_user
 - Click “Execute”, you should see the superuser details. This confirms the tables have been created and you can add data to your database
 
-
 31. In Gitpod teminal install gunicorn library:
--   pip3 install gunicorn django-cors-headers
+
+- pip3 install gunicorn django-cors-headers
 
 32. Update requirements.txt bit running command:
--   pip freeze --local > requirements.txt
+
+- pip freeze --local > requirements.txt
 
 33. Add a Procfile to the top level of the directory and add the following code:
 
@@ -547,7 +558,7 @@ web: gunicorn drf_api.wsgi
     'corsheaders',
 ```
 
-36. In settings.py at the top of MIDDLEWARE add corsheaders middleware 
+36. In settings.py at the top of MIDDLEWARE add corsheaders middleware
 
 ```
 MIDDLEWARE = [
@@ -561,7 +572,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
-
 
 37. Under the MIDDLEWARE list, set the ALLOWED_ORIGINS for the network requests made to the server with the following code:
 
@@ -590,50 +600,57 @@ JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 ```
 
-39. In env.py, set SECRET_KEY value to a random value: 
+39. In env.py, set SECRET_KEY value to a random value:
+
 ```
 os.environ['SECRET_KEY'] = 'random value here'
 ```
 
 40. In settings.py, replace the default SECRET_KEY variable as follows:
+
 ```
 SECRET_KEY = os.environ.get('SECRET_KEY')
 ```
 
 41. In settings.py, set DEBUG as follows:
+
 ```
 DEBUG = 'DEV' in os.environ
 ```
 
 42. In Heroku settings, config vars, copy the CLOUDINARY_URL and SECRET_KEY values from env.py and paste them
 
-43. Add a config var COLLECT_STATIC and set to 1. 
+43. Add a config var COLLECT_STATIC and set to 1.
 
-44. In teminal update requirements.txt file with command 
+44. In teminal update requirements.txt file with command
+
 -     pip freeze > requirements.txt
 
 45. Add, commit and push changes.
 
-46. In Heroku and click on 'Deploy' Tab. Go to 'Deployment Method' and click on GitHub. 
+46. In Heroku and click on 'Deploy' Tab. Go to 'Deployment Method' and click on GitHub.
 
-47. Select and conect to the API repository. 
+47. Select and conect to the API repository.
 
-48. In 'Manual Deploy' select Main branch and click 'Deploy Branch'. 
+48. In 'Manual Deploy' select Main branch and click 'Deploy Branch'.
 
-50. Click on 'Open app' to access deployed app.
+49. Click on 'Open app' to access deployed app.
 
 ## dj-rest-auth bug fix Credit C.I Wlakthrough
 
-dj-test-auth currently has a bug that does not allow users to log out. To fix this, follow these steps: 
+dj-test-auth currently has a bug that does not allow users to log out. To fix this, follow these steps:
 
 51. In the drf_api views.py file, imort JWT_AUTH settings from settings.py:
+
 ```
 from .settings import (
     JWT_AUTH_COOKIE, JWT_AUTH_REFRESH_COOKIE, JWT_AUTH_SAMESITE,
     JWT_AUTH_SECURE,
 )
 ```
+
 then add logout code:
+
 ```
 @api_view(['POST'])
 def logout_route(request):
@@ -662,22 +679,26 @@ def logout_route(request):
 ```
 
 52. In main urls.py file, import the logout_route:
+
 ```
 from .views import root_route, logout_route
 ```
-then, add to the urlpatterns list. The logout_route must be placed above the dafault dj-rest-urls, as below: 
+
+then, add to the urlpatterns list. The logout_route must be placed above the dafault dj-rest-urls, as below:
+
 ```
     path('dj-rest-auth/logout/', logout_route),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
 ```
 
-53. Add, commit and push changes. 
+53. Add, commit and push changes.
 
-54. Go back to Heroku and manually deploy again. 
+54. Go back to Heroku and manually deploy again.
 
 ## Adding extra required environment variables - for frontend
 
-55. In settings.py, add heroku app url to ALLOWED_HOSTS: 
+55. In settings.py, add heroku app url to ALLOWED_HOSTS:
+
 ```
 ALLOWED_HOSTS = [
     '....herokuapp.com'
@@ -689,7 +710,7 @@ ALLOWED_HOSTS = [
 
 57. Add the new ALLOWED_HOST key with the value of your deployed URL (as added to ALLOWED_HOSTS).
 
-58. In settings.py  replace the url string with the ALLOWED_HOST environment variable"
+58. In settings.py replace the url string with the ALLOWED_HOST environment variable"
 
 ```
 ALLOWED_HOSTS = [
@@ -714,18 +735,16 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     ]
 ```
 
-61. Add, commit and push changes. 
+61. Add, commit and push changes.
 
 62. Return to Heroku and manually deploy branch again.
- 
 
 ## Credits:
 
 - A huge credit goes to Code Institute's Django DRF walkthrough project, that was used as a main guide to build ReviewMe project.
 
-- Code Institute tutors were consulted during set uo issues and a huge thanks to all of them for the explainations and suggestion to solve the issues i faced.
+- Code Institute tutors were consulted during project set up (version) issues and a huge thanks to all of them for the explainations and suggestion to solve the issues I faced.
 
 - Documentation provided by Code institute was highly consulted, such as Django Rest documentation and Django functionality links
 
-- Mentor Martina provided a huge support and guidance for setup and delivery 
-
+- Mentor Martina provided a huge support and guidance for setup and project delivery

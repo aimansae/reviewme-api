@@ -1,9 +1,9 @@
 from .models import Comment
 from rest_framework import serializers
 from django.contrib.humanize.templatetags.humanize import naturaltime
+
+
 # Credit CI walkthough
-
-
 class CommentSerializer(serializers.ModelSerializer):
     '''
     Serializer for Comment Model

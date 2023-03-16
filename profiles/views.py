@@ -25,7 +25,10 @@ class ProfileList(generics.ListAPIView):
 
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
-    '''Enables the owner to retrieve,edit or delete their profile'''
+    '''
+    Enables the owner to retrieve,edit or delete their profile
+    '''
+
     serializer_class = ProfileSerializer
     queryset = Profile.objects.annotate(
         reviews_count=Count('owner__review', distinct=True)

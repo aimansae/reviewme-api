@@ -27,7 +27,7 @@ class SaveDetail(generics.RetrieveDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = SaveSerializer
     queryset = Save.objects.all()
-    
+
     def get_queryset(self, *args, **kwargs):
         return Save.objects.all().filter(owner=self.request.user)
 

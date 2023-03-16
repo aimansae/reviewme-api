@@ -30,7 +30,7 @@ class ReviewSerializer(serializers.ModelSerializer):
             ).first()
             return like.id if like else None
         return None
-    
+
     def get_save_id(self, obj):
         user = self.context['request'].user
         if user.is_authenticated:
@@ -47,12 +47,12 @@ class ReviewSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'Image size larger than 2MB!'
             )
-            
+
         if (value.image.width) > 4096:
             raise serializers.ValidationError(
                 'Image size larger than 4096px!'
             )
-            
+
         if (value.image.height) > 4096:
             raise serializers.ValidationError(
                 'Image height larger than 4096px!'

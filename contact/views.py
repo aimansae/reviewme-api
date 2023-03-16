@@ -2,8 +2,6 @@ from rest_framework import generics, permissions
 from .models import Contact
 from .serializers import ContactSerializer
 
-# Create your views here.
-
 
 class ContactList(generics.ListCreateAPIView):
     '''
@@ -11,7 +9,6 @@ class ContactList(generics.ListCreateAPIView):
     '''
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = ContactSerializer
- # added later
     queryset = Contact.objects.all()
 
     def get_queryset(self, *args, **kwargs):

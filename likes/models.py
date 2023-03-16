@@ -4,6 +4,8 @@ from reviews.models import Review
 
 
 class Like(models.Model):
+    '''Model to like a review'''
+
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     review = models.ForeignKey(
         Review, related_name='likes', on_delete=models.CASCADE)

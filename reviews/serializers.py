@@ -3,6 +3,9 @@ from .models import Review
 from likes.models import Like
 from save.models import Save
 
+# Credit C.I. DRF-API walkthrough.
+# Modeification made
+
 
 class ReviewSerializer(serializers.ModelSerializer):
     '''

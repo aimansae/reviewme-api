@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Profile
 
+# Credit CI DRF-API walkthrough.
+
 
 class ProfileSerializer(serializers.ModelSerializer):
     '''

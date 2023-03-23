@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Credit C.I. DRF-API walkthrough.
+# Modeification made
+
 
 class Review(models.Model):
 

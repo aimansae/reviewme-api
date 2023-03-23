@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from reviews.models import Review
 
+# Credit C.I. DRF-API walkthrough.
+
 
 class Like(models.Model):
     '''Model to like a review'''

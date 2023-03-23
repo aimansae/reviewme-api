@@ -58,7 +58,7 @@ All manual testing can be found [here](static/readmeDocs/testing.md)
 
 ## Validation
 
-Validation was conducted thorught Code Institute [PEP8](https://pep8ci.herokuapp.com/#) tool, it passed with no errors Settings.py and contact model, present some line too long warnings.
+Validation was conducted thorught Code Institute [PEP8](https://pep8ci.herokuapp.com/#) tool, it passed with no errors Settings.py and contact model, present some line too long warnings, ignored momentarily.
 
 ## Bugs
 
@@ -138,11 +138,11 @@ RATING_CHOICES = [
 5. local workspace kept throwing MIME and 404() errors as shown below
    ![Mime Error](static/readmeDocs/mime-error.png)
 
-**Fixed** thanks to tutor's help, by adding DEBUG=True to settings.py
+**Fixed** thanks to tutor's help, by adding DEBUG=False to settings.py
 
 ## Known Bug-Issues
 
-No unknown bugs
+Adming page not being styled. Tried to remove Collect stativ var from Heroku, as advised by tutor, but that did not resolve the issue.
 
 ## Technologies used
 

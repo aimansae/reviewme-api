@@ -58,7 +58,9 @@ All manual testing can be found [here](static/readmeDocs/testing.md)
 
 ## Validation
 
-Validation was conducted thorught Code Institute [PEP8](https://pep8ci.herokuapp.com/#) tool, it passed with no errors Settings.py and contact model, present some line too long warnings, ignored momentarily.
+Validation was conducted thorught Code Institute [PEP8](https://pep8ci.herokuapp.com/#) tool, it passed with no errors.
+
+Settings.py and contact model, present some line too long warnings, ignored momentarily.
 
 ## Bugs
 
@@ -745,7 +747,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 - A huge credit goes to Code Institute's Django DRF walkthrough project, that was used as a main guide to build ReviewMe project.
 
-- Code Institute tutors were consulted during project set up (version) issues and a huge thanks to all of them for the explainations and suggestion to solve the issues I faced.
+- Code Institute tutors were consulted during project set up (version) issues and a huge thanks to all of them for the explanations and suggestion to solve the issues I faced.
 
 - Documentation provided by Code institute was highly consulted, such as Django Rest documentation and Django functionality links
 

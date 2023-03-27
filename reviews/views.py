@@ -6,7 +6,7 @@ from reviewme_api.permissions import IsOwnerOrReadOnly
 from django.db.models import Count
 
 # Credit C.I. DRF-API walkthrough.
-# Modeification made
+# Modification made
 
 
 class ReviewList(generics.ListCreateAPIView):

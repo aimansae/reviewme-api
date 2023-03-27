@@ -142,7 +142,9 @@ RATING_CHOICES = [
 
 ## Known Bug-Issues
 
-Adming page not being styled. Tried to remove Collect stativ var from Heroku, as advised by tutor, but that did not resolve the issue.
+Admin page not being styled. Tried to remove Collect stativ var from Heroku, as advised by tutor, but that did not resolve the issue. Tutor advised to leave it, as its expected behaviour, the 404 is internal to rest framework
+
+From local workspace, if debug is set to false, MIME error appears, and styling is o longer visible. As per tutor's advice this error is expected, as stated for admin page styling. When DEBUG=True, the MIME error no longer shows in the console.
 
 ## Technologies used
 
